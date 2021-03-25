@@ -18,6 +18,12 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **3** - turn right.
 
 ## The Learning Algorithm
+The agent is trained with the **_DQN_** algorithm.
+> A DQN, or Deep Q-Network, approximates a state-value function in a Q-Learning framework with a neural network. 
+It is usually used in conjunction with Experience Replay, for storing the episode steps in memory for off-policy learning, where samples are drawn from the replay memory at random. Additionally, the Q-Network is usually optimized towards a frozen target network that is periodically updated with the latest weights every  steps (where  is a hyperparameter). The latter makes training more stable by preventing short-term oscillations from a moving target. The former tackles autocorrelation that would occur from on-line learning, and having a replay memory makes the problem more like a supervised learning problem.
+
+This definition is taken from the [PapersWithCode website](https://paperswithcode.com/method/dqn)
+
 
 ### Model architecture
 ```python
@@ -57,7 +63,7 @@ def forward(self, state):
 
 ## Results
 
-I was able to achieve the goal in less than 400 episodes
+I was able to achieve the goal of _average reward of at least +13 over 100 episodes_, in episode **470**.
 
 ```angular2html
 Episode 100	Average Score: 1.23
